@@ -1,0 +1,6 @@
+# ignore VIM temp files
+*~
+*swp
+
+# ignore input
+/input/
