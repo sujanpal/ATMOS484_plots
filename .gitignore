@@ -2,5 +2,6 @@
 *~
 *swp
 
-# ignore input
+# ignore input and output
 /input/
+/output/
