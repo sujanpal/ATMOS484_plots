@@ -4,7 +4,13 @@
 Generates a DataFrame containing ATMOS484 met data 
 """
 function metdata()
+  if isdir("output") == false
+    mkdir("output")
+  end
   path = joinpath("output", "met")
+  if isdir(path) == false
+    mkdir(path)
+  end
   [download("http://www.atmos.anl.gov/ANLMET/numeric/2019/"*i*"19met.data", joinpath(path, i*"19met.data")) for i in ["nov", "dec"]];
   [download("http://www.atmos.anl.gov/ANLMET/numeric/2020/"*i*"20met.data", joinpath(path, i*"20met.data")) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]];
   [download("http://www.atmos.anl.gov/ANLMET/numeric/2021/"*i*"21met.data", joinpath(path, i*"21met.data")) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]];
