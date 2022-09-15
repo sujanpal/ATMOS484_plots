@@ -6,8 +6,10 @@ Activate the julia environment (contains dependencies such as DataFrame package)
 
 ```jl
 julia> ]
-pkg> activate .
-pkg> instantiate # first time only, to install the packages
+(@v1.8) pkg> activate .
+(ATMOS484) pkg> instantiate # first time only, to install the packages
+(ATMOS484) pkg> # type Backspace button to go back to julia mode
+julia> using ATMOS484 # use the ATMOS484 package
 ```
 
 ## Usage
