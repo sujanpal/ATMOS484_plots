@@ -1,3 +1,8 @@
+"""
+    main()
+
+Generates and write a DataFrame containing ATMOS484 flux tower, met, soil and respiration data
+"""
 function main()
   df1 = fluxtowerdata(); println("getting flux tower data...")
   df2 = metdata(); println("getting met data...")

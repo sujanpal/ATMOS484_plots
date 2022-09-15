@@ -1,3 +1,8 @@
+"""
+    respdata()
+
+Generates a DataFrame containing ATMOS484 respiration data (manual and auto)
+"""
 function respdata()
 # MANUAL Rsoil
   path = joinpath("input","resp","SFP output","Manual")
