@@ -17,10 +17,10 @@ function metdata()
   [download("http://www.atmos.anl.gov/ANLMET/numeric/2022/"*i*"22met.data", joinpath(path, i*"22met.data")) for i in ["jan", "feb","mar","apr","may"]];
   col_name = [:DOM,:Month,:Year,:Time,:PSC,:WD60,:WS60,:WD_STD60,:T60,:WD10,:WS10,:WD_STD10,:T10,:DPT,:RH,:TD100,:Precip,:RS,:RN,:Pressure,:WatVapPress,:TS10,:TS100,:TS10F]
   metdata = DataFrame[]
-  [push!(metdata, CSV.read(joinpath(path, i*"19met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2)) for i in ["nov", "dec"]]
-  [push!(metdata, CSV.read(joinpath(path, i*"20met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2)) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]]
-  [push!(metdata, CSV.read(joinpath(path, i*"21met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2)) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]]
-  [push!(metdata, CSV.read(joinpath(path, i*"22met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2)) for i in ["jan", "feb","mar","apr","may"]]
+  [push!(metdata, CSV.read(joinpath(path, i*"19met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2, silencewarnings = true)) for i in ["nov", "dec"]]
+  [push!(metdata, CSV.read(joinpath(path, i*"20met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2, silencewarnings = true)) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]]
+  [push!(metdata, CSV.read(joinpath(path, i*"21met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2, silencewarnings = true)) for i in ["jan", "feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]]
+  [push!(metdata, CSV.read(joinpath(path, i*"22met.data"), DataFrame, delim=' ', header=col_name, ignorerepeated=true, skipto=1, footerskip=2, silencewarnings = true)) for i in ["jan", "feb","mar","apr","may"]]
   metdata = reduce(vcat, metdata)
   met_n = size(metdata, 1) 
   metdata_time_str = Array{String}(undef, met_n)
