@@ -18,4 +18,4 @@ The function `main` will download the latest data and write a file called
 ```jl
 julia> main()
 ```
-![image](https://user-images.githubusercontent.com/22160257/190423120-39f6ed5e-5e0c-4bdc-a33b-e5dd5f8fed7d.png)
+![image](https://user-images.githubusercontent.com/22160257/190423442-3f08f9e3-b6e4-4264-b089-dc5e0606967a.png)
