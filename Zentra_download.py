@@ -10,7 +10,7 @@ Downloads Data from the Loggers at the Zentra Website
 os.chdir(r'C:\Users\colwe\OneDrive\Desktop\Argonne\ATMOS484\ATMOS484-master\input\TEROS')
 ​
 #This token allows one to login to the Zentra website
-token = ZentraToken(username='jcolwell@anl.gov',password='!Jc161616!')
+token = ZentraToken(username=os.getenv("zentra_un"),password=os.getenv("zentra_pw"))
 ​
 #This creates a list of the device serial numbers to be accessed
 Device_SN = ["z6-19423","z6-04621","z6-04618","z6-04625","z6-04619","z6-04629","z6-04641","z6-04638","z6-04624","z6-04627","z6-04620"]
